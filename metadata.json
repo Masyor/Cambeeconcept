@@ -1,0 +1,6 @@
+{
+  "name": "CamBEE",
+  "description": "Gamified English spelling practice platform featuring 30-set honeycomb progression hives, flower garden nursery, Honey Shield streak armor, mystery blind boxes, seasonal mascot costumes, and animated profile frames.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
