@@ -279,21 +279,26 @@
 
       this.canvas.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
+          e.preventDefault();
           onPointerDown(e.touches[0].clientX, e.touches[0].clientY);
         }
-      }, { passive: true });
+      }, { passive: false });
 
       window.addEventListener('touchmove', (e) => {
         if (e.touches.length === 1) {
+          if (this.isDragging) {
+            e.preventDefault();
+          }
           onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
         }
-      }, { passive: true });
+      }, { passive: false });
 
       window.addEventListener('touchend', (e) => {
         if (e.changedTouches.length === 1) {
+          e.preventDefault();
           onPointerUp(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
         }
-      });
+      }, { passive: false });
 
       const cancelBtn = document.getElementById('cancelPlacementBtn');
       if (cancelBtn) {
